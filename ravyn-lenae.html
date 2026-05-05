@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ravyn Lenae — Case Study | RiVER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+
+<body class="ravyn-page">
+
+<div class="cursor" id="cursor">
+  <div class="cursor-dot" id="cursorDot"></div>
+</div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="noise" aria-hidden="true"></div>
+
+  <nav id="nav">
+    <a href="index.html#hero" class="nav-logo">
+      <img src="River_Graphic_White.png" alt="RiVER" class="logo-mark" width="90" height="90"/>
+    </a>
+      <ul class="nav-links"> 
+        <li class="nav-audio-item">
+          <button type="button" id="navAudioToggle" class="nav-audio-btn">Play audio</button>
+        </li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="./Ramirez_Rvier_Resume_Official_%20(1)%20(1).pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#music">Music</a></li>
+        <li><a href="index.html#contact">Contact</a></li> 
+      </ul>
+  </nav>
+
+  <main class="ravyn-main">
+  <section class="ravyn-section">
+    <header class="case-hero">
+      <h1 class="case-title">Ravyn Lenae</h1>
+      <p class="case-subtitle">Artist Identity Study · 2026</p>
+    </header>
+
+    <div class="mock-strip" role="region" aria-label="Magazine and cover artwork — scroll horizontally">
+      <span class="mock-strip__hint mock-strip__hint--left" aria-hidden="true">‹</span>
+      <div class="mock-scroll ravyn-mock-scroll" id="ravyn-mock-scroll">
+        <figure class="mock-slide" data-slide="0"><button type="button" class="mock-zoom" aria-label="Expand magazine cover"><img src="Ravyn_Lenae_mag_cover.png" alt="Magazine cover" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+        <figure class="mock-slide" data-slide="1"><button type="button" class="mock-zoom" aria-label="Expand spread page 2"><img src="Ravyn_Lenae_mag_pg2.png" alt="Magazine spread page 2" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+        <figure class="mock-slide" data-slide="2"><button type="button" class="mock-zoom" aria-label="Expand spread page 3"><img src="Ravyn_Lenae_mag_pg3.png" alt="Magazine spread page 3" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+        <figure class="mock-slide" data-slide="3"><button type="button" class="mock-zoom" aria-label="Expand spread page 4"><img src="Ravyn_Lenae_mag_pg4.png" alt="Magazine spread page 4" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+        <figure class="mock-slide" data-slide="4"><button type="button" class="mock-zoom" aria-label="Expand album cover revision"><img src="Killing me softly Album cover.jpg" alt="Album cover revision" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+        <figure class="mock-slide" data-slide="5"><button type="button" class="mock-zoom" aria-label="Expand album cover revision"><img src="Ravyn-Lenae_album2 copy.png" alt="Album 2" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+
+      </div>
+      <span class="mock-strip__hint mock-strip__hint--right" aria-hidden="true">›</span>
+    </div>
+
+    <div class="caption-shell">
+      <div class="caption-panels" id="ravyn-captions" aria-live="polite">
+        <div class="caption-panel is-active" data-slide="0" aria-hidden="false">
+          <p><strong>Spread 01</strong> — Inside layout rhythm: margins, pull quotes, and image hierarchy for storytelling.</p>
+        </div>
+        <div class="caption-panel" data-slide="2" aria-hidden="true">
+          <p><strong>Album art</strong> — Reimagined cover art for two distincive works exploring different techniques highlighting the essence of each work.</p>
+        </div>
+        <div class="caption-panel" data-slide="3" aria-hidden="true">
+          <p><strong>Cover</strong> — Primary magazine cover exploration tying typography and photography.</p>
+        </div>
+        <div class="caption-panel" data-slide="4" aria-hidden="true">
+          <p><strong>Spread 02</strong> — Color blocking and texture tests to echo Ravyn Lenae’s soulful tone without overpowering copy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Expanded artwork">
+  <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Close enlarged image">×</button>
+  <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+  <div class="lightbox__frame">
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+  </div>
+</div>
+
+<script src="site-audio.js"></script>
+<script>
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+if (dot && ring) {
+  document.addEventListener('mousemove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top = my + 'px';
+  });
+  const lerp = (a, b, t) => a + (b - a) * t;
+  (function tickCursor() {
+    rx = lerp(rx, mx, 0.12);
+    ry = lerp(ry, my, 0.12);
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(tickCursor);
+  })();
+  document.querySelectorAll('a, button, .mock-strip, .mock-zoom, .lightbox__close, .nav-audio-btn').forEach((el) => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+  });
+}
+
+(function initLightbox() {
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  const backdrop = document.getElementById('lightboxBackdrop');
+  if (!lb || !lbImg) return;
+  function openLb(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.hidden = true;
+    lbImg.src = '';
+    lbImg.alt = '';
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.mock-zoom').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const im = btn.querySelector('img');
+      if (im) openLb(im.currentSrc || im.src, im.alt || '');
+    });
+  });
+  closeBtn?.addEventListener('click', closeLb);
+  backdrop?.addEventListener('click', closeLb);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lb.hidden) closeLb();
+  });
+})();
+
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+}
+
+(function () {
+  const scrollRoot = document.getElementById('ravyn-mock-scroll');
+  if (!scrollRoot) return;
+  const slides = scrollRoot.querySelectorAll('.mock-slide[data-slide]');
+  const panels = document.querySelectorAll('#ravyn-captions .caption-panel[data-slide]');
+  if (!slides.length || !panels.length) return;
+
+  const setActive = (id) => {
+    panels.forEach((p) => {
+      const on = p.getAttribute('data-slide') === id;
+      p.classList.toggle('is-active', on);
+      p.setAttribute('aria-hidden', on ? 'false' : 'true');
+    });
+  };
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      const visible = entries.filter((e) => e.isIntersecting && e.intersectionRatio > 0.15);
+      if (!visible.length) return;
+      visible.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      const id = visible[0].target.getAttribute('data-slide');
+      if (id != null) setActive(id);
+    },
+    { root: scrollRoot, rootMargin: '0px -8% 0px -8%', threshold: [0.15, 0.35, 0.55, 0.75] }
+  );
+
+  slides.forEach((s) => io.observe(s));
+  setActive('0');
+})();
+
+(function () {
+  const bgCanvas = document.getElementById('bg-canvas');
+  if (!bgCanvas) return;
+  const bgCtx = bgCanvas.getContext('2d');
+
+  function resizeBg() {
+    bgCanvas.width = window.innerWidth;
+    bgCanvas.height = window.innerHeight;
+  }
+  resizeBg();
+  window.addEventListener('resize', resizeBg);
+
+  const particles = [];
+  const NUM_PARTICLES = 280;
+  for (let i = 0; i < NUM_PARTICLES; i++) {
+    particles.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.5 + 0.3,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      a: Math.random() * 0.4 + 0.06,
+      lite: 52 + Math.random() * 28
+    });
+  }
+
+  const orbs = [
+    { x: 0.12, y: 0.18, r: 360, h: 0, s: 0, l: 44 },
+    { x: 0.82, y: 0.62, r: 320, h: 0, s: 4, l: 38 },
+    { x: 0.54, y: 0.88, r: 300, h: 25, s: 6, l: 36 },
+  ];
+  let orbTime = 0;
+
+  function drawBg() {
+    bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+    orbTime += 0.003;
+    orbs.forEach((orb, i) => {
+      const ox = (orb.x + Math.sin(orbTime * 0.7 + i * 2.1) * 0.06) * bgCanvas.width;
+      const oy = (orb.y + Math.cos(orbTime * 0.5 + i * 1.7) * 0.05) * bgCanvas.height;
+      const g = bgCtx.createRadialGradient(ox, oy, 0, ox, oy, orb.r);
+      g.addColorStop(0, `hsla(${orb.h},${orb.s}%,${orb.l}%,0.2)`);
+      g.addColorStop(0.5, `hsla(${orb.h},${orb.s}%,${orb.l}%,0.07)`);
+      g.addColorStop(1, `hsla(${orb.h},${orb.s}%,${orb.l}%,0)`);
+      bgCtx.fillStyle = g;
+      bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
+    });
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0) p.x = bgCanvas.width;
+      if (p.x > bgCanvas.width) p.x = 0;
+      if (p.y < 0) p.y = bgCanvas.height;
+      if (p.y > bgCanvas.height) p.y = 0;
+      bgCtx.beginPath();
+      bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      bgCtx.fillStyle = `hsla(0, 0%, ${p.lite}%, ${p.a})`;
+      bgCtx.fill();
+    });
+    requestAnimationFrame(drawBg);
+  }
+  drawBg();
+})();
+</script>
+
+</body>
+</html>

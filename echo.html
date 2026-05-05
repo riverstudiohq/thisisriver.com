@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ECHO — Case Study | RiVER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+
+<body class="echo-page">
+
+<div class="cursor" id="cursor">
+  <div class="cursor-dot" id="cursorDot"></div>
+</div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="noise" aria-hidden="true"></div>
+
+  <nav id="nav">
+    <a href="index.html#hero" class="nav-logo">
+      <img src="River_Graphic_White.png" alt="RiVER" class="logo-mark" width="90" height="90"/>
+    </a>
+      <ul class="nav-links"> 
+        <li class="nav-audio-item">
+          <button type="button" id="navAudioToggle" class="nav-audio-btn">Play audio</button>
+        </li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="./Ramirez_Rvier_Resume_Official_%20(1)%20(1).pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#music">Music</a></li>
+        <li><a href="index.html#contact">Contact</a></li>  
+      </ul>
+  </nav>
+
+  <main class="echo-main">
+  <article class="echo-section">
+    <header class="case-hero">
+      <h1 class="case-title">ECHO</h1>
+      <p class="case-subtitle">UX Design Case Study · 2026 (PENDING COMPLETION) </p>
+    </header>
+
+    <section class="echo-block echo-block--gallery" aria-labelledby="echo-gallery-heading">
+      <h2 id="echo-gallery-heading" class="echo-block__heading echo-block__heading--gallery">Screens &amp; flows</h2>
+      <p class="echo-gallery__lede">Scroll sideways to browse; tap or click a screen to enlarge.</p>
+      <div class="mock-strip" role="region" aria-label="Interface mockups — scroll horizontally">
+        <span class="mock-strip__hint mock-strip__hint--left" aria-hidden="true">‹</span>
+        <div class="mock-scroll echo-mock-scroll" id="echo-mock-scroll">
+          <figure class="mock-slide"><button type="button" class="mock-zoom" aria-label="Expand Home mockup"><img src="ECHO_Home.png" alt="Home screen mockup" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+          <figure class="mock-slide"><button type="button" class="mock-zoom" aria-label="Expand Profile mockup"><img src="ECHO_Profile.png" alt="Profile screen mockup" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+          <figure class="mock-slide"><button type="button" class="mock-zoom" aria-label="Expand Connections mockup"><img src="ECHO_Connections.png" alt="Connections screen mockup" width="800" height="600" loading="eager" fetchpriority="high" decoding="async"></button></figure>
+          <figure class="mock-slide"><button type="button" class="mock-zoom" aria-label="Expand For you mockup"><img src="ECHO_FYP.png" alt="For you feed mockup" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+          <figure class="mock-slide"><button type="button" class="mock-zoom" aria-label="Expand Display mockup"><img src="ECHO_display.png" alt="Display screen mockup" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+        </div>
+        <span class="mock-strip__hint mock-strip__hint--right" aria-hidden="true">›</span>
+      </div>
+    </section>
+
+    <section class="echo-block echo-block--overview" aria-labelledby="echo-overview-heading">
+      <h2 id="echo-overview-heading" class="echo-block__heading">Overview</h2>
+      <div class="case-intro-card">
+        <p>ECHO is an immersive platform concept for artists—built around discovery, connection, and a cohesive visual identity. Many are finding that they are left 
+          without resources, connections, and opportunities to kickstart their journey in breaking through the industry. This project will focus on the unification of 
+          artists, musicians, producers, record labels, and other individuals active in the field. Through this, users will have an accessible opportunity to build their 
+          network, share their work, and overall, make the artist discovery process easier for professionals in the industry. 
+        </p>
+      </div>
+    </section>
+
+    <section class="case-writeup echo-writeup" aria-labelledby="echo-case-writeup-heading">
+      <h2 id="echo-case-writeup-heading" class="case-writeup__title">Case study</h2>
+      <ol class="case-writeup__stack">
+        <li class="case-writeup__stack-item">
+          <article class="case-writeup__card">
+            <h3 class="case-writeup__card-title">Problem</h3>
+            <p>With the number of independent artists on the rise within the music industry, many are finding themselves unsure of how to capitalize on 
+              the use of varying social media platforms to promote their music, make connections, and, overall, kick-start their journey breaking into the industry.</p>
+          </article>
+        </li>
+        <li class="case-writeup__stack-item">
+          <article class="case-writeup__card">
+            <h3 class="case-writeup__card-title">Research</h3>
+            <p>Consolidated with a combination of personal creative practice, observation of emerging artists, 
+              and analysis of early-stage artist development workflows via social media such as tiktok and instagram.</p>
+          </article>
+        </li>
+        <li class="case-writeup__stack-item">
+          <article class="case-writeup__card">
+            <h3 class="case-writeup__card-title">Projected Outcomes and Imapcts</h3>
+            <p> To help emerging artists define their identity earlier in their process;
+              reduce misalignment between sound, visuals, and branding; support more efficient collaboration between artists, 
+              producers, and creative teams; and provide A&R (Artist & Repertoire) teams with a structured starting point for development conversations.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+  </article>
+  </main>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Expanded mockup">
+  <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Close enlarged image">×</button>
+  <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+  <div class="lightbox__frame">
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+  </div>
+</div>
+
+<script src="site-audio.js"></script>
+<script>
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+if (dot && ring) {
+  document.addEventListener('mousemove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top = my + 'px';
+  });
+  const lerp = (a, b, t) => a + (b - a) * t;
+  (function tickCursor() {
+    rx = lerp(rx, mx, 0.12);
+    ry = lerp(ry, my, 0.12);
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(tickCursor);
+  })();
+  document.querySelectorAll('a, button, .mock-strip, .mock-zoom, .lightbox__close, .nav-audio-btn').forEach((el) => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+  });
+}
+
+(function initLightbox() {
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+  const backdrop = document.getElementById('lightboxBackdrop');
+  if (!lb || !lbImg) return;
+  function openLb(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    lb.hidden = true;
+    lbImg.src = '';
+    lbImg.alt = '';
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.mock-zoom').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const im = btn.querySelector('img');
+      if (im) openLb(im.currentSrc || im.src, im.alt || '');
+    });
+  });
+  closeBtn?.addEventListener('click', closeLb);
+  backdrop?.addEventListener('click', closeLb);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lb.hidden) closeLb();
+  });
+})();
+
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+}
+
+(function () {
+  const bgCanvas = document.getElementById('bg-canvas');
+  if (!bgCanvas) return;
+  const bgCtx = bgCanvas.getContext('2d');
+
+  function resizeBg() {
+    bgCanvas.width = window.innerWidth;
+    bgCanvas.height = window.innerHeight;
+  }
+  resizeBg();
+  window.addEventListener('resize', resizeBg);
+
+  const particles = [];
+  const NUM_PARTICLES = 280;
+  for (let i = 0; i < NUM_PARTICLES; i++) {
+    particles.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.5 + 0.3,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      a: Math.random() * 0.45 + 0.08,
+      hue: 8 + Math.random() * 32
+    });
+  }
+
+  const orbs = [
+    { x: 0.12, y: 0.18, r: 360, h: 18, s: 92, l: 46 },
+    { x: 0.82, y: 0.62, r: 320, h: 6, s: 88, l: 36 },
+    { x: 0.54, y: 0.88, r: 300, h: 28, s: 78, l: 44 },
+  ];
+  let orbTime = 0;
+
+  function drawBg() {
+    bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+    orbTime += 0.003;
+    orbs.forEach((orb, i) => {
+      const ox = (orb.x + Math.sin(orbTime * 0.7 + i * 2.1) * 0.06) * bgCanvas.width;
+      const oy = (orb.y + Math.cos(orbTime * 0.5 + i * 1.7) * 0.05) * bgCanvas.height;
+      const g = bgCtx.createRadialGradient(ox, oy, 0, ox, oy, orb.r);
+      g.addColorStop(0, `hsla(${orb.h},${orb.s}%,${orb.l}%,0.2)`);
+      g.addColorStop(0.5, `hsla(${orb.h},${orb.s}%,${orb.l}%,0.07)`);
+      g.addColorStop(1, `hsla(${orb.h},${orb.s}%,${orb.l}%,0)`);
+      bgCtx.fillStyle = g;
+      bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
+    });
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0) p.x = bgCanvas.width;
+      if (p.x > bgCanvas.width) p.x = 0;
+      if (p.y < 0) p.y = bgCanvas.height;
+      if (p.y > bgCanvas.height) p.y = 0;
+      bgCtx.beginPath();
+      bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      bgCtx.fillStyle = `hsla(${p.hue}, 72%, 62%, ${p.a})`;
+      bgCtx.fill();
+    });
+    requestAnimationFrame(drawBg);
+  }
+  drawBg();
+})();
+</script>
+
+</body>
+</html>
