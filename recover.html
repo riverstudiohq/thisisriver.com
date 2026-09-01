@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CEM Physical Therapy — Case Study | RiVER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600&family=Lato:ital,wght@0,300;0,400;0,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+<body class="recover-page">
+
+<div class="cursor" id="cursor">
+  <div class="cursor-dot" id="cursorDot"></div>
+</div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="noise" aria-hidden="true"></div>
+
+  <nav id="nav">
+    <a href="index.html#hero" class="nav-logo">
+      <img src="RiVER_Graphic.png" alt="RiVER" class="logo-mark" width="72" height="72"/>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-audio-item">
+        <button type="button" id="navAudioToggle" class="nav-audio-btn">Play audio</button>
+      </li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="River_Ramirez_Resume_NYU.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#music">Music</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="recover-main">
+  <article class="recover-section">
+
+    <header class="case-hero">
+      <h1 class="case-title">CEM Physical Therapy</h1>
+      <p class="case-subtitle">Mobile App · AI-Powered Physical Therapy Companion · 2026</p>
+    </header>
+
+    <section class="recover-block recover-block--overview" aria-labelledby="recover-overview-heading">
+      <h2 id="recover-overview-heading" class="recover-block__heading">Overview</h2>
+      <div class="case-intro-card">
+        <p>CEM Physical Therapy is an AI-powered mobile application designed to improve accessibility and adherence for physical therapy patients. The project began after firsthand experience working as a physical therapy aide, where many patients did not complete their prescribed exercises due to a lack of understanding or forgetfulness. The app guides patients from onboarding through daily recovery — combining a gamified Recovery Score, visual exercise cards, encrypted AI support, and clinic-connected events within a HIPAA-conscious environment.</p>
+      </div>
+    </section>
+
+    <section class="recover-block recover-block--flow" aria-labelledby="recover-flow-heading">
+      <h2 id="recover-flow-heading" class="recover-block__heading recover-block__heading--gallery">App flow</h2>
+      <p class="recover-gallery__lede">Six connected screens form a complete patient journey — from first launch to daily recovery support.</p>
+      <ol class="recover-flow">
+        <li class="recover-flow__step">
+          <span class="recover-flow__num">01</span>
+          <span class="recover-flow__label">Landing</span>
+        </li>
+        <li class="recover-flow__arrow" aria-hidden="true">→</li>
+        <li class="recover-flow__step">
+          <span class="recover-flow__num">02</span>
+          <span class="recover-flow__label">Sign In</span>
+        </li>
+        <li class="recover-flow__arrow" aria-hidden="true">→</li>
+        <li class="recover-flow__step">
+          <span class="recover-flow__num">03</span>
+          <span class="recover-flow__label">Dashboard</span>
+        </li>
+        <li class="recover-flow__arrow" aria-hidden="true">→</li>
+        <li class="recover-flow__step">
+          <span class="recover-flow__num">04</span>
+          <span class="recover-flow__label">Exercises</span>
+        </li>
+        <li class="recover-flow__arrow" aria-hidden="true">→</li>
+        <li class="recover-flow__step">
+          <span class="recover-flow__num">05</span>
+          <span class="recover-flow__label">Events</span>
+        </li>
+        <li class="recover-flow__arrow" aria-hidden="true">→</li>
+        <li class="recover-flow__step">
+          <span class="recover-flow__num">06</span>
+          <span class="recover-flow__label">AI Chat</span>
+        </li>
+      </ol>
+    </section>
+
+    <section class="recover-block recover-block--gallery" aria-labelledby="recover-gallery-heading">
+      <h2 id="recover-gallery-heading" class="recover-block__heading recover-block__heading--gallery">Interface mockups</h2>
+      <p class="recover-gallery__lede">Scroll to explore each screen. Tap or click any device to enlarge.</p>
+      <div class="recover-devices" role="region" aria-label="CEM Physical Therapy app screens — scroll horizontally">
+        <span class="mock-strip__hint mock-strip__hint--left" aria-hidden="true">‹</span>
+        <div class="recover-devices__scroll" id="recover-devices-scroll">
+
+          <!-- 01 Landing -->
+          <figure class="rm-device" id="screen-landing">
+            <button type="button" class="rm-device__btn mock-zoom" aria-label="Enlarge Landing screen mockup" data-screen="landing">
+              <div class="rm-device__shell">
+                <div class="rm-device__notch" aria-hidden="true"></div>
+                <div class="rm-device__viewport">
+                  <div class="rm-screen rm-screen--landing">
+                    <div class="rm-landing">
+                      <div class="rm-landing__hero">
+                        <div class="rm-logo-icon" aria-hidden="true"></div>
+                        <h3 class="rm-app-name">CEM</h3>
+                        <p class="rm-tagline">Your recovery, powered by AI</p>
+                        <div class="rm-clinic-strip" aria-hidden="true"></div>
+                        <div class="rm-pills">
+                          <span>AI-Powered Recovery</span>
+                          <span>Exercise Tracking</span>
+                          <span>Direct Messaging</span>
+                        </div>
+                      </div>
+                      <div class="rm-landing__cta">
+                        <div class="rm-btn rm-btn--primary">Sign In</div>
+                        <div class="rm-btn rm-btn--accent">Create Account</div>
+                        <p class="rm-footnote">For existing clinic patients</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <figcaption class="rm-device__caption">Landing</figcaption>
+          </figure>
+
+          <!-- 02 Auth -->
+          <figure class="rm-device" id="screen-auth">
+            <button type="button" class="rm-device__btn mock-zoom" aria-label="Enlarge Sign In screen mockup" data-screen="auth">
+              <div class="rm-device__shell">
+                <div class="rm-device__notch" aria-hidden="true"></div>
+                <div class="rm-device__viewport">
+                  <div class="rm-screen rm-screen--auth">
+                    <div class="rm-auth">
+                      <div class="rm-auth__back" aria-hidden="true"></div>
+                      <div class="rm-logo-icon rm-logo-icon--sm" aria-hidden="true"></div>
+                      <h3 class="rm-auth__title">Welcome back!</h3>
+                      <p class="rm-auth__sub">Sign in to your patient portal</p>
+                      <div class="rm-field"><label>Full Name</label><div class="rm-input">Stephen Fong</div></div>
+                      <div class="rm-field"><label>Email Address</label><div class="rm-input rm-input--muted">your@email.com</div></div>
+                      <div class="rm-field"><label>Date of Birth</label><div class="rm-input rm-input--muted">mm/dd/yyyy</div></div>
+                      <div class="rm-btn rm-btn--primary rm-btn--full">Sign In</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <figcaption class="rm-device__caption">Sign In</figcaption>
+          </figure>
+
+          <!-- 03 Home -->
+          <figure class="rm-device" id="screen-home">
+            <button type="button" class="rm-device__btn mock-zoom" aria-label="Enlarge Home dashboard mockup" data-screen="home">
+              <div class="rm-device__shell">
+                <div class="rm-device__notch" aria-hidden="true"></div>
+                <div class="rm-device__viewport">
+                  <div class="rm-screen rm-screen--home">
+                    <div class="rm-home">
+                      <header class="rm-header">
+                        <div>
+                          <p class="rm-greeting">Good morning,</p>
+                          <h3 class="rm-header__name">Stephen 👋</h3>
+                        </div>
+                        <div class="rm-avatar" aria-hidden="true"></div>
+                      </header>
+                      <div class="rm-home__body">
+                        <div class="rm-score-card">
+                          <div class="rm-score-card__top">
+                            <div>
+                              <p class="rm-score-label"><span class="rm-dot"></span> AI Recovery Score</p>
+                              <p class="rm-score-value">78<span>/100</span></p>
+                              <p class="rm-score-delta">Up 6 pts this week</p>
+                            </div>
+                            <div class="rm-ring" aria-hidden="true"><span>78%</span></div>
+                          </div>
+                          <div class="rm-tip">
+                            <span class="rm-tip__icon" aria-hidden="true">i</span>
+                            <p>AI Tip: Ice your knee for 15 min after today's leg lifts.</p>
+                          </div>
+                        </div>
+                        <p class="rm-section-title">Upcoming Appointment</p>
+                        <div class="rm-appt-card">
+                          <div class="rm-appt-icon" aria-hidden="true"></div>
+                          <div>
+                            <p class="rm-appt-name">Robert Manley, PT</p>
+                            <p class="rm-appt-date">Wed, May 23 · 3:00 PM</p>
+                          </div>
+                          <span class="rm-badge">In 2 days</span>
+                        </div>
+                        <p class="rm-section-title">Today's Exercises <span>See all →</span></p>
+                        <div class="rm-exercise-row">
+                          <div class="rm-ex-thumb" aria-hidden="true"></div>
+                          <div><p class="rm-ex-name">Prone Single Leg Lifts</p><p class="rm-ex-meta">2 sets · 10 reps</p></div>
+                          <div class="rm-check rm-check--open"></div>
+                        </div>
+                        <div class="rm-exercise-row">
+                          <div class="rm-ex-thumb rm-ex-thumb--alt" aria-hidden="true"></div>
+                          <div><p class="rm-ex-name">Bridges</p><p class="rm-ex-meta">2 sets · 10 reps</p></div>
+                          <div class="rm-check rm-check--done">✓</div>
+                        </div>
+                      </div>
+                      <div class="rm-nav rm-nav--home" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <figcaption class="rm-device__caption">Home Dashboard</figcaption>
+          </figure>
+
+          <!-- 04 Exercises -->
+          <figure class="rm-device" id="screen-exercises">
+            <button type="button" class="rm-device__btn mock-zoom" aria-label="Enlarge Exercises screen mockup" data-screen="exercises">
+              <div class="rm-device__shell">
+                <div class="rm-device__notch" aria-hidden="true"></div>
+                <div class="rm-device__viewport">
+                  <div class="rm-screen rm-screen--exercises">
+                    <div class="rm-exercises">
+                      <header class="rm-header rm-header--plain">
+                        <div>
+                          <h3 class="rm-header__title">My Exercises</h3>
+                          <p class="rm-header__sub">Prescribed by Robert Manley, PT</p>
+                        </div>
+                      </header>
+                      <div class="rm-progress-bar">
+                        <div class="rm-progress-bar__labels"><span>Today's progress</span><span>1 / 4 done</span></div>
+                        <div class="rm-progress-bar__track"><div class="rm-progress-bar__fill" style="width:25%"></div></div>
+                      </div>
+                      <div class="rm-exercises__body">
+                        <div class="rm-ai-banner">
+                          <span class="rm-ai-banner__icon" aria-hidden="true">✦</span>
+                          <div><p class="rm-ai-banner__label">AI Recommendation</p><p class="rm-ai-banner__text">Start with stretches, then progress to strengthening.</p></div>
+                        </div>
+                        <div class="rm-ex-card">
+                          <div class="rm-ex-thumb" aria-hidden="true"></div>
+                          <div><p class="rm-ex-name">Prone Single Leg Lifts</p><p class="rm-ex-meta">2 sets · 10 reps · 3×/week</p><span class="rm-tag">Glutes &amp; Hamstrings</span></div>
+                          <div class="rm-check rm-check--open"></div>
+                        </div>
+                        <div class="rm-ex-card rm-ex-card--done">
+                          <div class="rm-ex-thumb rm-ex-thumb--alt" aria-hidden="true"></div>
+                          <div><p class="rm-ex-name">Bridges</p><p class="rm-ex-meta">2 sets · 10 reps · 3×/week</p><span class="rm-tag">Glutes &amp; Core</span></div>
+                          <div class="rm-check rm-check--done">✓</div>
+                        </div>
+                        <div class="rm-ex-card">
+                          <div class="rm-ex-thumb rm-ex-thumb--placeholder" aria-hidden="true"></div>
+                          <div><p class="rm-ex-name">Clamshells</p><p class="rm-ex-meta">3 sets · 15 reps · Daily</p><span class="rm-tag">Hip Abductors</span></div>
+                          <div class="rm-check rm-check--open"></div>
+                        </div>
+                      </div>
+                      <div class="rm-nav rm-nav--exercises" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <figcaption class="rm-device__caption">My Exercises</figcaption>
+          </figure>
+
+          <!-- 05 Events -->
+          <figure class="rm-device" id="screen-events">
+            <button type="button" class="rm-device__btn mock-zoom" aria-label="Enlarge Events screen mockup" data-screen="events">
+              <div class="rm-device__shell">
+                <div class="rm-device__notch" aria-hidden="true"></div>
+                <div class="rm-device__viewport">
+                  <div class="rm-screen rm-screen--events">
+                    <div class="rm-events">
+                      <header class="rm-header rm-header--plain">
+                        <div>
+                          <h3 class="rm-header__title">Events &amp; News</h3>
+                          <p class="rm-header__sub">Stay connected with our community</p>
+                        </div>
+                      </header>
+                      <div class="rm-events__body">
+                        <p class="rm-section-title">Upcoming Events</p>
+                        <div class="rm-event-card">
+                          <div class="rm-event-card__img" aria-hidden="true"><span class="rm-event-tag rm-event-tag--lime">Active Event</span></div>
+                          <div class="rm-event-card__body">
+                            <p class="rm-event-title">Turkey Run 2026</p>
+                            <p class="rm-event-sub">Community 5K Walk/Run</p>
+                            <p class="rm-event-meta">📍 Brookdale Park · Nov 30, 12 PM</p>
+                            <div class="rm-btn rm-btn--primary rm-btn--sm">More Info</div>
+                          </div>
+                        </div>
+                        <div class="rm-event-card">
+                          <div class="rm-event-card__img rm-event-card__img--alt" aria-hidden="true"><span class="rm-event-tag">Community</span></div>
+                          <div class="rm-event-card__body">
+                            <p class="rm-event-title">Vote: Best of Essex 2026</p>
+                            <p class="rm-event-sub">Help us win! Cast your vote.</p>
+                            <p class="rm-event-meta">📍 Online · Deadline Nov 12</p>
+                            <div class="rm-btn rm-btn--primary rm-btn--sm">More Info</div>
+                          </div>
+                        </div>
+                        <p class="rm-section-title">Announcements</p>
+                        <div class="rm-announce">
+                          <span>🎉</span>
+                          <div><p class="rm-announce__title">New AI features live</p><p class="rm-announce__body">Track your recovery score and get form tips.</p></div>
+                        </div>
+                      </div>
+                      <div class="rm-nav rm-nav--events" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <figcaption class="rm-device__caption">Events &amp; News</figcaption>
+          </figure>
+
+          <!-- 06 Chat -->
+          <figure class="rm-device" id="screen-chat">
+            <button type="button" class="rm-device__btn mock-zoom" aria-label="Enlarge AI Assistant screen mockup" data-screen="chat">
+              <div class="rm-device__shell">
+                <div class="rm-device__notch" aria-hidden="true"></div>
+                <div class="rm-device__viewport">
+                  <div class="rm-screen rm-screen--chat">
+                    <div class="rm-chat">
+                      <header class="rm-chat__header">
+                        <div class="rm-chat__avatar" aria-hidden="true">✦</div>
+                        <div>
+                          <h3 class="rm-header__title">PT AI Assistant</h3>
+                          <p class="rm-chat__status"><span class="rm-dot"></span> Always available</p>
+                        </div>
+                      </header>
+                      <div class="rm-chat__messages">
+                        <div class="rm-bubble rm-bubble--ai">
+                          <span class="rm-bubble__icon" aria-hidden="true">✦</span>
+                          <p>Hi! I'm your PT AI assistant 👋 I can help with exercises, appointments, and recovery progress.</p>
+                        </div>
+                        <div class="rm-bubble rm-bubble--user"><p>How's my recovery?</p></div>
+                        <div class="rm-bubble rm-bubble--ai">
+                          <span class="rm-bubble__icon" aria-hidden="true">✦</span>
+                          <p>Your Recovery Score is 78/100 — up 6 points this week! Keep completing your home program.</p>
+                        </div>
+                      </div>
+                      <div class="rm-chat__chips">
+                        <span>Today's exercises</span>
+                        <span>Next appointment</span>
+                      </div>
+                      <div class="rm-chat__input">
+                        <div class="rm-input-bar">Ask about your recovery...</div>
+                        <p class="rm-chat__disclaimer">AI responses are informational — not medical advice</p>
+                      </div>
+                      <div class="rm-nav rm-nav--chat" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </button>
+            <figcaption class="rm-device__caption">PT AI Assistant</figcaption>
+          </figure>
+
+        </div>
+        <span class="mock-strip__hint mock-strip__hint--right" aria-hidden="true">›</span>
+      </div>
+    </section>
+
+    <section class="recover-hifi-showcase" aria-labelledby="recover-hifi-heading">
+      <h2 id="recover-hifi-heading" class="recover-block__heading recover-block__heading--gallery">Screen breakdown</h2>
+      <div class="recover-breakdown">
+        <article class="recover-breakdown__item">
+          <span class="recover-breakdown__step">01</span>
+          <div class="recover-breakdown__copy">
+            <h3>Landing &amp; Onboarding</h3>
+            <p>A welcoming entry point that establishes trust with clinic branding, feature highlights, and clear paths to sign in or create a HIPAA-protected patient account.</p>
+          </div>
+        </article>
+        <article class="recover-breakdown__item">
+          <span class="recover-breakdown__step">02</span>
+          <div class="recover-breakdown__copy">
+            <h3>Authentication</h3>
+            <p>Simple sign-in and account creation with name, email, and date of birth — plus a visible HIPAA privacy notice for new patients entering the care portal.</p>
+          </div>
+        </article>
+        <article class="recover-breakdown__item">
+          <span class="recover-breakdown__step">03</span>
+          <div class="recover-breakdown__copy">
+            <h3>Recovery Score Dashboard</h3>
+            <p>The home hub surfaces a gamified 0–100 Recovery Score, personalized AI tips, upcoming appointments, today's prescribed exercises, and weekly progress at a glance.</p>
+          </div>
+        </article>
+        <article class="recover-breakdown__item">
+          <span class="recover-breakdown__step">04</span>
+          <div class="recover-breakdown__copy">
+            <h3>Exercise Library</h3>
+            <p>Full prescribed program with progress tracking, expandable AI form tips per exercise, completion toggles, and category tags to reduce confusion between visits.</p>
+          </div>
+        </article>
+        <article class="recover-breakdown__item">
+          <span class="recover-breakdown__step">05</span>
+          <div class="recover-breakdown__copy">
+            <h3>Events &amp; News</h3>
+            <p>A community hub for clinic events, local activities, and announcements — keeping patients connected to their care environment between appointments.</p>
+          </div>
+        </article>
+        <article class="recover-breakdown__item">
+          <span class="recover-breakdown__step">06</span>
+          <div class="recover-breakdown__copy">
+            <h3>PT AI Assistant</h3>
+            <p>An encrypted, always-available chat for recovery questions — with quick-reply chips, contextual responses, and a clear disclaimer that answers are informational, not medical advice.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-writeup recover-writeup" aria-labelledby="recover-case-writeup-heading">
+      <h2 id="recover-case-writeup-heading" class="case-writeup__title">Case study</h2>
+      <ol class="case-writeup__stack">
+        <li class="case-writeup__stack-item">
+          <article class="case-writeup__card">
+            <h3 class="case-writeup__card-title">Problem</h3>
+            <p>Home exercise programs are central to physical therapy, yet compliance remains low. Once patients leave the clinic, confusion about exercises, forgetfulness, isolation from care teams, and invisible progress lead many to skip their routines—slowing recovery and increasing strain on both patients and therapists.</p>
+          </article>
+        </li>
+        <li class="case-writeup__stack-item">
+          <article class="case-writeup__card">
+            <h3 class="case-writeup__card-title">Research</h3>
+            <p>Shaped by direct observation as a PT aide: patients repeatedly asked the same questions (ice vs. heat, rep counts), forgot exercise instructions between visits, had no sense of weekly progress, and valued clinic community. The insight—patients need the right information at the right time in a format that motivates follow-through.</p>
+          </article>
+        </li>
+        <li class="case-writeup__stack-item">
+          <article class="case-writeup__card">
+            <h3 class="case-writeup__card-title">Solution</h3>
+            <p>CEM Physical Therapy reframes home exercise compliance as a guided recovery journey across six connected screens. Onboarding builds trust, the Recovery Score gamifies consistency, visual exercise cards with AI form tips reduce confusion, an encrypted assistant answers common questions, and Events &amp; News keeps the clinic present in daily life.</p>
+          </article>
+        </li>
+        <li class="case-writeup__stack-item">
+          <article class="case-writeup__card">
+            <h3 class="case-writeup__card-title">Projected Outcomes</h3>
+            <p>Higher home exercise completion through clarity and gamified feedback; fewer unnecessary clinic calls via AI support; improved appointment attendance; stronger engagement between visits; and reduced repetitive education tasks for therapists.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+  </article>
+  </main>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Expanded mockup">
+  <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Close enlarged mockup">×</button>
+  <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+  <div class="lightbox__frame lightbox__frame--device">
+    <div class="rm-device__shell rm-device__shell--large">
+      <div class="rm-device__notch" aria-hidden="true"></div>
+      <div class="rm-device__viewport rm-device__viewport--large" id="lightboxViewport"></div>
+    </div>
+  </div>
+</div>
+
+<script src="site-audio.js"></script>
+<script>
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+if (dot && ring) {
+  document.addEventListener('mousemove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top = my + 'px';
+  });
+  const lerp = (a, b, t) => a + (b - a) * t;
+  (function tickCursor() {
+    rx = lerp(rx, mx, 0.12);
+    ry = lerp(ry, my, 0.12);
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(tickCursor);
+  })();
+  document.querySelectorAll('a, button, .recover-devices, .mock-zoom, .lightbox__close, .nav-audio-btn').forEach((el) => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+  });
+}
+
+(function initLightbox() {
+  const lb = document.getElementById('lightbox');
+  const viewport = document.getElementById('lightboxViewport');
+  const closeBtn = document.getElementById('lightboxClose');
+  const backdrop = document.getElementById('lightboxBackdrop');
+  if (!lb || !viewport) return;
+
+  function openLb(screenEl) {
+    viewport.innerHTML = '';
+    const clone = screenEl.cloneNode(true);
+    clone.classList.add('rm-screen--large');
+    viewport.appendChild(clone);
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLb() {
+    lb.hidden = true;
+    viewport.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.rm-device__btn.mock-zoom').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const screen = btn.querySelector('.rm-screen');
+      if (screen) openLb(screen);
+    });
+  });
+  closeBtn?.addEventListener('click', closeLb);
+  backdrop?.addEventListener('click', closeLb);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lb.hidden) closeLb();
+  });
+})();
+
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+}
+
+(function () {
+  const bgCanvas = document.getElementById('bg-canvas');
+  if (!bgCanvas) return;
+  const bgCtx = bgCanvas.getContext('2d');
+
+  function resizeBg() {
+    bgCanvas.width = window.innerWidth;
+    bgCanvas.height = window.innerHeight;
+  }
+  resizeBg();
+  window.addEventListener('resize', resizeBg);
+
+  const particles = [];
+  const NUM_PARTICLES = 280;
+  for (let i = 0; i < NUM_PARTICLES; i++) {
+    particles.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 1.5 + 0.3,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      a: Math.random() * 0.45 + 0.08,
+      hue: 195 + Math.random() * 40
+    });
+  }
+
+  const orbs = [
+    { x: 0.14, y: 0.2, r: 360, h: 205, s: 72, l: 42 },
+    { x: 0.84, y: 0.58, r: 320, h: 168, s: 58, l: 38 },
+    { x: 0.5, y: 0.86, r: 300, h: 188, s: 65, l: 44 },
+  ];
+  let orbTime = 0;
+
+  function drawBg() {
+    bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+    orbTime += 0.003;
+    orbs.forEach((orb, i) => {
+      const ox = (orb.x + Math.sin(orbTime * 0.7 + i * 2.1) * 0.06) * bgCanvas.width;
+      const oy = (orb.y + Math.cos(orbTime * 0.5 + i * 1.7) * 0.05) * bgCanvas.height;
+      const g = bgCtx.createRadialGradient(ox, oy, 0, ox, oy, orb.r);
+      g.addColorStop(0, `hsla(${orb.h},${orb.s}%,${orb.l}%,0.2)`);
+      g.addColorStop(0.5, `hsla(${orb.h},${orb.s}%,${orb.l}%,0.07)`);
+      g.addColorStop(1, `hsla(${orb.h},${orb.s}%,${orb.l}%,0)`);
+      bgCtx.fillStyle = g;
+      bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
+    });
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0) p.x = bgCanvas.width;
+      if (p.x > bgCanvas.width) p.x = 0;
+      if (p.y < 0) p.y = bgCanvas.height;
+      if (p.y > bgCanvas.height) p.y = 0;
+      bgCtx.beginPath();
+      bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      bgCtx.fillStyle = `hsla(${p.hue}, 62%, 68%, ${p.a})`;
+      bgCtx.fill();
+    });
+    requestAnimationFrame(drawBg);
+  }
+  drawBg();
+})();
+</script>
+
+</body>
+</html>
