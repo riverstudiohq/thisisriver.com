@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="818.334" height="75.5085" viewBox="0 0 818.334 75.5085" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Flow" opacity="0.95" d="M1.06694 55.4667C211.667 116.267 363.067 -5.33333 527.667 45.8667C692.167 97.0667 738.267 77.8667 817.267 1.06667" stroke="url(#paint0_linear_0_4)" stroke-width="2.13333" stroke-linecap="round"/>
+<defs>
+<linearGradient id="paint0_linear_0_4" x1="1.06694" y1="37.7544" x2="817.267" y2="37.7544" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A8DCFF" stop-opacity="0"/>
+<stop offset="0.25" stop-color="#A8DCFF"/>
+<stop offset="0.65" stop-color="#3D8BFF"/>
+<stop offset="1" stop-color="#2F5BFF" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

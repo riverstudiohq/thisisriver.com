@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRACE — Case Study | RiVER</title>
+    <meta name="description" content="TRACE — an IP and originality registry concept by River Ramirez." />
+    <link rel="icon" type="image/png" sizes="32x32" href="RiVER_Graphic.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400&family=Instrument+Serif:ital@1&family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="rebrand.css?v=18" />
+  </head>
+
+<body id="top">
+
+<header class="nav" id="nav">
+  <a href="index.html" class="nav-logo" aria-label="RiVER home">
+    <img class="nav-logo__mark" src="River_Graphic_White.png" alt="" width="48" height="48">
+    <span class="nav-logo__word">R<span class="dot-i">i<span class="dot-i__stem" aria-hidden="true">i</span></span>VER</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="index.html#work" aria-current="page">WORK</a>
+    <a href="index.html#about">ABOUT</a>
+    <a href="index.html#sound">SOUND</a>
+    <a href="River_Ramirez_Resume_NYU.pdf?v=2" target="_blank" rel="noopener noreferrer">RESUME ↗</a>
+    <a href="index.html#contact">CONTACT</a>
+  </nav>
+  <button type="button" id="navAudioToggle" class="sound-toggle" data-label-on="SOUND ON" data-label-off="SOUND OFF">
+    <img src="assets/rebrand/eq.svg" alt="" width="14" height="12" class="sound-toggle__eq">
+    <span data-audio-label>SOUND OFF</span>
+  </button>
+</header>
+
+<main>
+  <section class="case-hero">
+    <canvas class="particle-canvas" id="caseParticles" data-seed="37" aria-hidden="true"></canvas>
+    <div class="case-hero__content">
+      <a href="index.html#work" class="back-link">← ALL WORK</a>
+      <p class="eyebrow">(03) — PRODUCT DESIGN · CREATOR TOOLS</p>
+      <h1 class="case-title">TRACE — can originality be <em>calculated?</em></h1>
+      <p class="case-lede">A mobile concept that checks an image, song, or passage against millions of existing works so creators know how much of it is truly theirs, and a UX study on AI, ownership, and artistic freedom.</p>
+      <dl class="case-facts">
+        <div><dt>ROLE</dt><dd>Product Manager</dd></div>
+        <div><dt>TIMELINE</dt><dd>2026</dd></div>
+        <div><dt>TOOLS</dt><dd>Figma</dd></div>
+        <div><dt>PLATFORM</dt><dd>iOS Mobile</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="case-showcase reveal" aria-label="Selected screens">
+    <div class="showcase-stage stage--trace">
+      <img class="stage-shot" src="assets/work/trace/01-welcome.png" alt="TRACE welcome screen" width="428" height="926" loading="eager">
+      <img class="stage-shot" src="assets/work/trace/04-score.png" alt="TRACE originality score" width="428" height="926" loading="eager">
+      <img class="stage-shot" src="assets/work/trace/07-match.png" alt="TRACE match detail" width="428" height="926" loading="eager">
+      <img class="stage-shot" src="assets/work/trace/08-ownership.png" alt="TRACE ownership split" width="428" height="926" loading="eager">
+      <img class="stage-shot" src="assets/work/trace/12-reflection.png" alt="TRACE reflection" width="428" height="926" loading="eager">
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="case-section__head reveal">
+      <p class="eyebrow">OVERVIEW</p>
+      <h2 class="case-h2">Human work, <em>measured.</em></h2>
+    </div>
+    <div class="reveal">
+      <div class="case-body">
+        <p>TRACE is an IP and originality registry. A creator uploads a piece of work, and Trace compares it against 2.4 billion indexed works, returning an overlap score, a risk level, the most similar pieces, and recommended next steps.</p>
+        <p>The product is also a provocation. As the flow goes on, Trace quietly shifts from measuring to deciding: it assigns ownership, restricts publishing, and sets thresholds with no human review. The design makes that turn visible so the question lands with the user: <strong>the algorithm sees overlap, but it doesn&rsquo;t see why.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="case-section__head reveal">
+      <p class="eyebrow">BRAND SYSTEM</p>
+      <h2 class="case-h2">Paper, ink, and <em>one signal.</em></h2>
+    </div>
+    <div class="reveal">
+      <img class="brand-board" src="assets/work/trace/brand-system.png" alt="TRACE brand system: type, palette, and components" width="1330" height="1084" loading="lazy">
+      <div class="principles">
+        <article class="point"><span class="point__num">01</span><h3 class="point__title">Calm first</h3><p>Paper and ink for a calm, helpful surface. Nothing feels like an accusation.</p></article>
+        <article class="point"><span class="point__num">02</span><h3 class="point__title">Measure visibly</h3><p>Serif for the work and the people behind it. Mono for everything the algorithm measures.</p></article>
+        <article class="point"><span class="point__num">03</span><h3 class="point__title">Show the turn</h3><p>One vermilion signal marks the moment Trace stops measuring and starts to decide.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="flows flows--trace" aria-labelledby="flows-title">
+    <div class="section-header reveal">
+      <div class="section-header__main">
+        <p class="eyebrow">(02) — SCREENS &amp; FLOWS</p>
+        <h2 class="section-title" id="flows-title">From <em>measuring</em> to deciding</h2>
+      </div>
+      <p class="meta">13 SCREENS</p>
+    </div>
+
+    <div class="flow reveal">
+      <div class="flow__head">
+        <div>
+          <p class="eyebrow">FLOW A</p>
+          <h3 class="flow__title">Analyze</h3>
+          <p class="flow__desc">A calm entry point. Upload a piece of work and watch Trace compare it, step by step.</p>
+        </div>
+        <div class="flow__nav">
+          <button type="button" data-flow-prev aria-label="Previous screens">←</button>
+          <button type="button" data-flow-next aria-label="Next screens">→</button>
+        </div>
+      </div>
+      <div class="flow__track" tabindex="0" aria-label="Analyze screens">
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Welcome">
+            <img src="assets/work/trace/01-welcome.png" alt="TRACE — Welcome" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">01 · WELCOME</span>
+            <p>The brand idea up front: human work, measured.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Upload">
+            <img src="assets/work/trace/02-upload.png" alt="TRACE — Upload" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">02 · UPLOAD</span>
+            <p>Analyze an image, song, or passage against 2.4B indexed works.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Analyzing">
+            <img src="assets/work/trace/03-analyzing.png" alt="TRACE — Analyzing" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">03 · ANALYZING</span>
+            <p>&ldquo;Comparing your work…&rdquo; with each step of the analysis shown as it runs.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="flow reveal">
+      <div class="flow__head">
+        <div>
+          <p class="eyebrow">FLOW B</p>
+          <h3 class="flow__title">Results</h3>
+          <p class="flow__desc">Everything the algorithm measures, set in mono, and framed as calculation rather than judgment.</p>
+        </div>
+        <div class="flow__nav">
+          <button type="button" data-flow-prev aria-label="Previous screens">←</button>
+          <button type="button" data-flow-next aria-label="Next screens">→</button>
+        </div>
+      </div>
+      <div class="flow__track" tabindex="0" aria-label="Results screens">
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Originality score">
+            <img src="assets/work/trace/04-score.png" alt="TRACE — Originality score" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">04 · ORIGINALITY SCORE</span>
+            <p>62/100, moderate overlap. Calculated, not judged.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Risk">
+            <img src="assets/work/trace/05-risk.png" alt="TRACE — Risk" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">05 · RISK</span>
+            <p>Medium risk, with a reminder that similarity is not the same as infringement.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Similar works">
+            <img src="assets/work/trace/06-similar.png" alt="TRACE — Similar works" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">06 · SIMILAR WORKS</span>
+            <p>Ranked by measured overlap, not by who created first.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Match detail">
+            <img src="assets/work/trace/07-match.png" alt="TRACE — Match detail" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">07 · MATCH DETAIL</span>
+            <p>What Trace measured (wave frequency, gradient angle, palette hue) next to what it can&rsquo;t see: intent, lineage, fair-use context.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="flow reveal">
+      <div class="flow__head">
+        <div>
+          <p class="eyebrow">FLOW C</p>
+          <h3 class="flow__title">Decision</h3>
+          <p class="flow__desc">The vermilion turn. Trace stops informing and starts deciding, and the interface shows exactly where.</p>
+        </div>
+        <div class="flow__nav">
+          <button type="button" data-flow-prev aria-label="Previous screens">←</button>
+          <button type="button" data-flow-next aria-label="Next screens">→</button>
+        </div>
+      </div>
+      <div class="flow__track" tabindex="0" aria-label="Decision screens">
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Ownership">
+            <img src="assets/work/trace/08-ownership.png" alt="TRACE — Ownership" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">08 · OWNERSHIP</span>
+            <p>Trace has assigned ownership: 42% / 58%. Human review: none.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Publishing restricted">
+            <img src="assets/work/trace/09-restricted.png" alt="TRACE — Publishing restricted" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">09 · PUBLISHING RESTRICTED</span>
+            <p>Overlap 78% against a 55% threshold. Threshold set by Trace, not a legal finding.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Add context">
+            <img src="assets/work/trace/10-context.png" alt="TRACE — Add context" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">10 · ADD CONTEXT</span>
+            <p>A space for what the algorithm can&rsquo;t see.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Recommended actions">
+            <img src="assets/work/trace/11-actions.png" alt="TRACE — Recommended actions" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">11 · RECOMMENDED ACTIONS</span>
+            <p>Legal review, an extended search, or documenting the creative process.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="flow reveal">
+      <div class="flow__head">
+        <div>
+          <p class="eyebrow">FLOW D</p>
+          <h3 class="flow__title">Reflection</h3>
+          <p class="flow__desc">Stepping back from the result to the question behind the product.</p>
+        </div>
+        <div class="flow__nav">
+          <button type="button" data-flow-prev aria-label="Previous screens">←</button>
+          <button type="button" data-flow-next aria-label="Next screens">→</button>
+        </div>
+      </div>
+      <div class="flow__track" tabindex="0" aria-label="Reflection screens">
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Reflection">
+            <img src="assets/work/trace/12-reflection.png" alt="TRACE — Reflection" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">12 · REFLECTION</span>
+            <p>Can originality be calculated? Measured, missed, decided.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Library">
+            <img src="assets/work/trace/13-library.png" alt="TRACE — Library" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">13 · LIBRARY</span>
+            <p>Every piece of work and its status: cleared, in review, or restricted.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="case-section__head reveal">
+      <p class="eyebrow">REFLECTION</p>
+      <h2 class="case-h2">The algorithm sees overlap. It doesn&rsquo;t see <em>why.</em></h2>
+    </div>
+    <div class="reveal">
+      <div class="case-points">
+        <article class="point">
+          <span class="point__num">01</span>
+          <h3 class="point__title">Measured</h3>
+          <p>Overlap, frequency, palette, and structure. Trace is genuinely useful when it reports what it can quantify.</p>
+        </article>
+        <article class="point">
+          <span class="point__num">02</span>
+          <h3 class="point__title">Missed</h3>
+          <p>Intent, lineage, influence, and fair-use context. The parts of creative work that make it human sit outside the score.</p>
+        </article>
+        <article class="point">
+          <span class="point__num">03</span>
+          <h3 class="point__title">Decided</h3>
+          <p>Ownership splits and publishing restrictions with no human review. This is where the design asks users to push back.</p>
+        </article>
+        <article class="point">
+          <span class="point__num">04</span>
+          <h3 class="point__title">Takeaway</h3>
+          <p>Tools that judge creative work should show their limits as clearly as their results, and keep a person in the loop when a number becomes a decision.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <a href="echo.html" class="next-project">
+    <p class="eyebrow">NEXT PROJECT</p>
+    <p class="next-project__title">ECHO <span aria-hidden="true">→</span></p>
+  </a>
+
+  <footer class="footer footer--static">
+    <span>© 2026 RIVER RAMIREZ</span>
+    <a href="#top">BACK TO TOP ↑</a>
+  </footer>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screen preview" aria-hidden="true">
+  <button type="button" class="lightbox__btn lightbox__close" aria-label="Close">✕</button>
+  <button type="button" class="lightbox__btn" data-lightbox-prev aria-label="Previous screen">←</button>
+  <figure>
+    <img src="" alt="">
+    <figcaption></figcaption>
+  </figure>
+  <button type="button" class="lightbox__btn" data-lightbox-next aria-label="Next screen">→</button>
+</div>
+
+<script src="site-audio.js"></script>
+<script src="particles.js?v=19"></script>
+<script src="case.js?v=12"></script>
+</body>
+</html>

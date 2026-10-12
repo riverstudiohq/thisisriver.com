@@ -48,7 +48,14 @@
     var navBtn = document.getElementById('navAudioToggle');
     if (navBtn) {
       var playing = !audio.paused;
-      navBtn.textContent = playing ? 'Pause audio' : 'Play audio';
+      var navLabel = navBtn.querySelector('[data-audio-label]');
+      if (navLabel) {
+        navLabel.textContent = playing
+          ? navBtn.getAttribute('data-label-on')
+          : navBtn.getAttribute('data-label-off');
+      } else {
+        navBtn.textContent = playing ? 'Pause audio' : 'Play audio';
+      }
       navBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
       navBtn.setAttribute(
         'aria-label',
@@ -57,12 +64,27 @@
     }
     var continueAudioBtn = document.getElementById('continueAudioBtn');
     if (continueAudioBtn) {
-      continueAudioBtn.textContent = audio.paused
-        ? 'Continue with Audio'
-        : 'Audio Enabled';
+      var continueLabel = continueAudioBtn.querySelector('[data-audio-label]');
+      if (continueLabel) {
+        continueLabel.textContent = audio.paused
+          ? continueAudioBtn.getAttribute('data-label-off')
+          : continueAudioBtn.getAttribute('data-label-on');
+        continueAudioBtn.setAttribute('aria-pressed', audio.paused ? 'false' : 'true');
+      } else {
+        continueAudioBtn.textContent = audio.paused
+          ? 'Continue with Audio'
+          : 'Audio Enabled';
+      }
     }
     var playPauseBtn = document.getElementById('playPauseBtn');
-    if (playPauseBtn) playPauseBtn.textContent = audio.paused ? 'Play' : 'Pause';
+    if (playPauseBtn) {
+      var playLabel = playPauseBtn.getAttribute('data-label-play') || 'Play';
+      var pauseLabel = playPauseBtn.getAttribute('data-label-pause') || 'Pause';
+      playPauseBtn.textContent = audio.paused ? playLabel : pauseLabel;
+      if (playPauseBtn.hasAttribute('data-label-play')) {
+        playPauseBtn.setAttribute('aria-label', audio.paused ? 'Play Saturn' : 'Pause Saturn');
+      }
+    }
     var muteBtn = document.getElementById('muteBtn');
     if (muteBtn) muteBtn.textContent = audio.muted ? 'Unmute' : 'Mute';
   }

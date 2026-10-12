@@ -45,7 +45,7 @@
     --text-primary: #0f2744;
     --text-secondary: #3d5a78;
     --text-muted: #6b849c;
-    --accent: #59a7ff;
+    --accent: #59a7ff; 
     --accent2: #3d8fe8;
     --accent3: #74d7ff;
     --glow: rgba(89, 167, 255, 0.14);
@@ -545,7 +545,7 @@ a.folder-wrap.folder-hit:focus-visible {
     border-bottom: none;
     border-radius: 16px 16px 0 0;
     transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
+    position: relative; 
     z-index: 10;
     margin-bottom: -4px;
     flex-shrink: 0;
@@ -556,7 +556,7 @@ a.folder-wrap.folder-hit:focus-visible {
     border-color: var(--border-hover);
     background: linear-gradient(180deg, #dceeff 0%, #c5e0fc 100%);
     box-shadow: var(--shadow-md);
-}
+  }
   .folder-wrap--featured {
     grid-column: span 2;
   }
@@ -1022,8 +1022,8 @@ a.folder-wrap.folder-hit:focus-visible {
 .stat-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 28px 32px;
+    border-radius: var(--radius); 
+    padding: 28px 32px; 
     transition: border-color 0.3s, box-shadow 0.3s;
     box-shadow: var(--shadow-sm);
 }
@@ -1184,13 +1184,13 @@ a.folder-wrap.folder-hit:focus-visible {
 
 .music-btn {
     border: 1px solid var(--border);
-    border-radius: 999px;
+    border-radius: 999px; 
     background: var(--surface-muted);
     color: var(--text-primary);
-    padding: 10px 18px;
+    padding: 10px 18px; 
     font-size: 0.8em;
     text-transform: uppercase;
-    cursor: none;
+    cursor: none; 
     transition: all 0.3s ease;
 }
 

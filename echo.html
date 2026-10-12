@@ -4,239 +4,294 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ECHO — Case Study | RiVER</title>
+    <meta name="description" content="ECHO — an artist discovery and collaboration platform concept by River Ramirez." />
+    <link rel="icon" type="image/png" sizes="32x32" href="RiVER_Graphic.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400&family=Instrument+Serif:ital@1&family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="rebrand.css?v=18" />
   </head>
 
-<body class="echo-page">
+<body id="top">
 
-<div class="cursor" id="cursor">
-  <div class="cursor-dot" id="cursorDot"></div>
-</div>
-<div class="cursor-ring" id="cursorRing"></div>
-
-<canvas id="bg-canvas" aria-hidden="true"></canvas>
-<div class="noise" aria-hidden="true"></div>
-
-  <nav id="nav">
-    <a href="index.html#hero" class="nav-logo">
-      <img src="RiVER_Graphic.png" alt="RiVER" class="logo-mark" width="72" height="72"/>
-    </a>
-      <ul class="nav-links"> 
-        <li class="nav-audio-item">
-          <button type="button" id="navAudioToggle" class="nav-audio-btn">Play audio</button>
-        </li>
-        <li><a href="index.html#work">Work</a></li>
-        <li><a href="River_Ramirez_Resume_NYU.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#music">Music</a></li>
-        <li><a href="index.html#contact">Contact</a></li>  
-      </ul>
+<header class="nav" id="nav">
+  <a href="index.html" class="nav-logo" aria-label="RiVER home">
+    <img class="nav-logo__mark" src="River_Graphic_White.png" alt="" width="48" height="48">
+    <span class="nav-logo__word">R<span class="dot-i">i<span class="dot-i__stem" aria-hidden="true">i</span></span>VER</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="index.html#work" aria-current="page">WORK</a>
+    <a href="index.html#about">ABOUT</a>
+    <a href="index.html#sound">SOUND</a>
+    <a href="River_Ramirez_Resume_NYU.pdf?v=2" target="_blank" rel="noopener noreferrer">RESUME ↗</a>
+    <a href="index.html#contact">CONTACT</a>
   </nav>
+  <button type="button" id="navAudioToggle" class="sound-toggle" data-label-on="SOUND ON" data-label-off="SOUND OFF">
+    <img src="assets/rebrand/eq.svg" alt="" width="14" height="12" class="sound-toggle__eq">
+    <span data-audio-label>SOUND OFF</span>
+  </button>
+</header>
 
-  <main class="echo-main">
-  <article class="echo-section">
-    <header class="case-hero">
-      <h1 class="case-title">ECHO</h1>
-      <p class="case-subtitle">UX Design Case Study · First Iteration · 2026</p>
-    </header>
+<main>
+  <section class="case-hero">
+    <canvas class="particle-canvas" id="caseParticles" data-seed="19" aria-hidden="true"></canvas>
+    <div class="case-hero__content">
+      <a href="index.html#work" class="back-link">← ALL WORK</a>
+      <p class="eyebrow">(01) — UX DESIGN · ARTIST PLATFORM</p>
+      <h1 class="case-title">ECHO — artist <em>discovery</em>, built for <em>connection.</em></h1>
+      <p class="case-lede">An immersive platform concept that unifies artists, producers, and labels, helping emerging musicians build their network, share their work, and get credited and paid for every collaboration.</p>
+      <dl class="case-facts">
+        <div><dt>ROLE</dt><dd>Product Manager</dd></div>
+        <div><dt>TIMELINE</dt><dd>2026 · Iteration 02</dd></div>
+        <div><dt>TOOLS</dt><dd>Figma, FigJam</dd></div>
+        <div><dt>PLATFORM</dt><dd>iOS Mobile</dd></div>
+      </dl>
+    </div>
+  </section>
 
-    <section class="echo-block echo-block--gallery" aria-labelledby="echo-gallery-heading">
-      <h2 id="echo-gallery-heading" class="echo-block__heading echo-block__heading--gallery">Screens &amp; flows</h2>
-      <p class="echo-gallery__lede">Scroll sideways to browse; tap or click a screen to enlarge.</p>
-      <div class="mock-strip" role="region" aria-label="Interface mockups, scroll horizontally">
-        <span class="mock-strip__hint mock-strip__hint--left" aria-hidden="true">‹</span>
-        <div class="mock-scroll echo-mock-scroll" id="echo-mock-scroll">
-          <figure class="mock-slide"><button type="button" class="mock-zoom" aria-label="Expand Home mockup"><img src="ECHO_Home.png" alt="Home screen mockup" width="800" height="600" loading="lazy" decoding="async"></button></figure>
-          <figure class="mock-slide"><button type="button" class="mock-zoom" aria-label="Expand Profile mockup"><img src="ECHO_Profile.png" alt="Profile screen mockup" width="800" height="600" loading="lazy" decoding="async"></button></figure>
-          <figure class="mock-slide"><button type="button" class="mock-zoom" aria-label="Expand Connections mockup"><img src="ECHO_Connections.png" alt="Connections screen mockup" width="800" height="600" loading="eager" fetchpriority="high" decoding="async"></button></figure>
-          <figure class="mock-slide"><button type="button" class="mock-zoom" aria-label="Expand For you mockup"><img src="ECHO_FYP.png" alt="For you feed mockup" width="800" height="600" loading="lazy" decoding="async"></button></figure>
-          <figure class="mock-slide"><button type="button" class="mock-zoom" aria-label="Expand Display mockup"><img src="ECHO_display.png" alt="Display screen mockup" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+  <section class="case-showcase reveal" aria-label="Selected screens">
+    <div class="showcase-stage stage--echo">
+      <img class="stage-shot" src="assets/work/echo/a1-welcome.png" alt="ECHO welcome screen" width="428" height="926" loading="eager">
+      <img class="stage-shot" src="assets/work/echo/b1-discover.png" alt="ECHO discover feed" width="428" height="926" loading="eager">
+      <img class="stage-shot" src="assets/work/echo/b2-profile.png" alt="ECHO artist profile" width="428" height="926" loading="eager">
+      <img class="stage-shot" src="assets/work/echo/c1-royalties.png" alt="ECHO royalties home" width="428" height="926" loading="eager">
+      <img class="stage-shot" src="assets/work/echo/c2-split.png" alt="ECHO split sheet" width="428" height="926" loading="eager">
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="case-section__head reveal">
+      <p class="eyebrow">OVERVIEW</p>
+      <h2 class="case-h2">A home base for <em>independent</em> artists.</h2>
+    </div>
+    <div class="reveal">
+      <div class="case-body">
+        <p>ECHO is an immersive platform concept for artists, built around discovery, connection, and a cohesive visual identity. Many are finding that they are left without resources, connections, and opportunities to kickstart their journey in breaking through the industry.</p>
+        <p>This project focuses on the unification of artists, musicians, producers, record labels, and other individuals active in the field. Through this, users will have an accessible opportunity to build their network, share their work, and overall, <strong>make the artist discovery process easier for professionals in the industry.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="case-section__head reveal">
+      <p class="eyebrow">CASE STUDY</p>
+      <h2 class="case-h2">From <em>scattered</em> to structured.</h2>
+    </div>
+    <div class="reveal">
+      <div class="case-points">
+        <article class="point">
+          <span class="point__num">01</span>
+          <h3 class="point__title">Problem</h3>
+          <p>With the number of independent artists on the rise within the music industry, many are finding themselves unsure of how to capitalize on the use of varying social media platforms to promote their music, make connections, and, overall, kick-start their journey breaking into the industry.</p>
+        </article>
+        <article class="point">
+          <span class="point__num">02</span>
+          <h3 class="point__title">Research</h3>
+          <p>Consolidated with a combination of personal creative practice, observation of emerging artists, and analysis of early-stage artist development workflows via social media such as TikTok and Instagram.</p>
+        </article>
+        <article class="point">
+          <span class="point__num">03</span>
+          <h3 class="point__title">Direction</h3>
+          <p>Same bones as the first iteration, re-skinned in pastel blues. Every surface now has a path into a credited, paid collaboration, and a shared split bar keeps every collaborator looking at the same truth.</p>
+        </article>
+        <article class="point">
+          <span class="point__num">04</span>
+          <h3 class="point__title">Projected Outcomes</h3>
+          <p>Help emerging artists define their identity earlier; reduce misalignment between sound, visuals, and branding; support more efficient collaboration between artists, producers, and creative teams; and give A&amp;R teams a structured starting point for development conversations.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="flows flows--echo" aria-labelledby="flows-title">
+    <div class="section-header reveal">
+      <div class="section-header__main">
+        <p class="eyebrow">(02) — SCREENS &amp; FLOWS</p>
+        <h2 class="section-title" id="flows-title">Three flows, <em>one ecosystem</em></h2>
+      </div>
+      <p class="meta">12 SCREENS</p>
+    </div>
+
+    <div class="flow reveal">
+      <div class="flow__head">
+        <div>
+          <p class="eyebrow">FLOW A</p>
+          <h3 class="flow__title">Onboarding</h3>
+          <p class="flow__desc">A ripple collage introduces the brand idea: collaborators circling the artist. Identity setup makes &ldquo;define your identity earlier&rdquo; tangible from the first minute.</p>
         </div>
-        <span class="mock-strip__hint mock-strip__hint--right" aria-hidden="true">›</span>
+        <div class="flow__nav">
+          <button type="button" data-flow-prev aria-label="Previous screens">←</button>
+          <button type="button" data-flow-next aria-label="Next screens">→</button>
+        </div>
       </div>
-    </section>
-
-    <section class="echo-block echo-block--overview" aria-labelledby="echo-overview-heading">
-      <h2 id="echo-overview-heading" class="echo-block__heading">Overview</h2>
-      <div class="case-intro-card">
-        <p>ECHO is an immersive platform concept for artists, built around discovery, connection, and a cohesive visual identity. Many are finding that they are left 
-          without resources, connections, and opportunities to kickstart their journey in breaking through the industry. This project will focus on the unification of 
-          artists, musicians, producers, record labels, and other individuals active in the field. Through this, users will have an accessible opportunity to build their 
-          network, share their work, and overall, make the artist discovery process easier for professionals in the industry. 
-        </p>
+      <div class="flow__track" tabindex="0" aria-label="Onboarding screens">
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Welcome">
+            <img src="assets/work/echo/a1-welcome.png" alt="ECHO — Welcome" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">A1 · WELCOME</span>
+            <p>Lowercase wordmark, a ripple collage of real collaborators, and sentence-case calls to action.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Sign up">
+            <img src="assets/work/echo/a2-signup.png" alt="ECHO — Sign up" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">A2 · SIGN UP</span>
+            <p>Stage name comes first; social sign-in is restyled as soft pills.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Identity setup">
+            <img src="assets/work/echo/a3-identity.png" alt="ECHO — Identity setup" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">A3 · IDENTITY SETUP</span>
+            <p>New in this iteration. Role, sound, and palette chips use pastel-blue fills for the selected state.</p>
+          </figcaption>
+        </figure>
       </div>
-    </section>
+    </div>
 
-    <section class="case-writeup echo-writeup" aria-labelledby="echo-case-writeup-heading">
-      <h2 id="echo-case-writeup-heading" class="case-writeup__title">Case study</h2>
-      <ol class="case-writeup__stack">
-        <li class="case-writeup__stack-item">
-          <article class="case-writeup__card">
-            <h3 class="case-writeup__card-title">Problem</h3>
-            <p>With the number of independent artists on the rise within the music industry, many are finding themselves unsure of how to capitalize on 
-              the use of varying social media platforms to promote their music, make connections, and, overall, kick-start their journey breaking into the industry.</p>
-          </article>
-        </li>
-        <li class="case-writeup__stack-item">
-          <article class="case-writeup__card">
-            <h3 class="case-writeup__card-title">Research</h3>
-            <p>Consolidated with a combination of personal creative practice, observation of emerging artists, 
-              and analysis of early-stage artist development workflows via social media such as tiktok and instagram.</p>
-          </article>
-        </li>
-        <li class="case-writeup__stack-item">
-          <article class="case-writeup__card">
-            <h3 class="case-writeup__card-title">Projected Outcomes and Imapcts</h3>
-            <p> To help emerging artists define their identity earlier in their process;
-              reduce misalignment between sound, visuals, and branding; support more efficient collaboration between artists, 
-              producers, and creative teams; and provide A&R (Artist & Repertoire) teams with a structured starting point for development conversations.</p>
-          </article>
-        </li>
-      </ol>
-    </section>
-  </article>
-  </main>
+    <div class="flow reveal">
+      <div class="flow__head">
+        <div>
+          <p class="eyebrow">FLOW B</p>
+          <h3 class="flow__title">Discover, profile, connect, create</h3>
+          <p class="flow__desc">Every surface now has a path into a credited, paid collaboration.</p>
+        </div>
+        <div class="flow__nav">
+          <button type="button" data-flow-prev aria-label="Previous screens">←</button>
+          <button type="button" data-flow-next aria-label="Next screens">→</button>
+        </div>
+      </div>
+      <div class="flow__track" tabindex="0" aria-label="Discover, profile, connect, create screens">
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Discover">
+            <img src="assets/work/echo/b1-discover.png" alt="ECHO — Discover" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">B1 · DISCOVER</span>
+            <p>Masonry feed with pastel tags (Open to collab, Producer, New track) and a floating nav with the new Royalties tab.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Profile">
+            <img src="assets/work/echo/b2-profile.png" alt="ECHO — Profile" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">B2 · PROFILE</span>
+            <p>Baby-blue header, a Collabs stat, and Posts / Music / Credits tabs. &ldquo;Start a collab&rdquo; is the primary action.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Connections">
+            <img src="assets/work/echo/b3-connections.png" alt="ECHO — Connections" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">B3 · CONNECTIONS</span>
+            <p>Collaborator strip with status rings; threads show Collab, Split ✓, and Pending tags.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Make a post">
+            <img src="assets/work/echo/b4-create.png" alt="ECHO — Make a post" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">B4 · MAKE A POST</span>
+            <p>Three post types as pastel cards; the collab toggle feeds a draft split sheet.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
 
-<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Expanded mockup">
-  <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Close enlarged image">×</button>
-  <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
-  <div class="lightbox__frame">
-    <img class="lightbox__img" id="lightboxImg" src="" alt="">
-  </div>
+    <div class="flow reveal">
+      <div class="flow__head">
+        <div>
+          <p class="eyebrow">FLOW C · NEW</p>
+          <h3 class="flow__title">Royalties &amp; collab splits</h3>
+          <p class="flow__desc">Aqua means money in, cornflower needs attention, periwinkle is an action. The shared split bar is the hero element across sheet, review, and statement.</p>
+        </div>
+        <div class="flow__nav">
+          <button type="button" data-flow-prev aria-label="Previous screens">←</button>
+          <button type="button" data-flow-next aria-label="Next screens">→</button>
+        </div>
+      </div>
+      <div class="flow__track" tabindex="0" aria-label="Royalties &amp; collab splits screens">
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Royalties home">
+            <img src="assets/work/echo/c1-royalties.png" alt="ECHO — Royalties home" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">C1 · ROYALTIES HOME</span>
+            <p>Aqua balance card, quick stats, and every collab with a Paid, Pending, or Draft status pill.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge New split sheet">
+            <img src="assets/work/echo/c2-split.png" alt="ECHO — New split sheet" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">C2 · NEW SPLIT SHEET</span>
+            <p>Master and Publishing tabs, a live split bar, and color-matched percent pills that must total 100% to send.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Review &amp; sign">
+            <img src="assets/work/echo/c3-review.png" alt="ECHO — Review &amp; sign" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">C3 · REVIEW &amp; SIGN</span>
+            <p>Signature tracker with nudges; disputes return the sheet to draft rather than stalling.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Track earnings">
+            <img src="assets/work/echo/c4-earnings.png" alt="ECHO — Track earnings" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">C4 · TRACK EARNINGS</span>
+            <p>Monthly bars, breakdown by source, and a split recap. &ldquo;Share with A&amp;R&rdquo; exports clean ownership data.</p>
+          </figcaption>
+        </figure>
+        <figure class="screen">
+          <button type="button" class="screen__open" aria-label="Enlarge Cash out">
+            <img src="assets/work/echo/c5-cashout.png" alt="ECHO — Cash out" width="428" height="926" loading="lazy" draggable="false">
+          </button>
+          <figcaption>
+            <span class="screen__label">C5 · CASH OUT</span>
+            <p>Clear amount, method, fee, arrival time, and tax status before confirming.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <a href="recover.html" class="next-project">
+    <p class="eyebrow">NEXT PROJECT</p>
+    <p class="next-project__title">CEM Physical Therapy <span aria-hidden="true">→</span></p>
+  </a>
+
+  <footer class="footer footer--static">
+    <span>© 2026 RIVER RAMIREZ</span>
+    <a href="#top">BACK TO TOP ↑</a>
+  </footer>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screen preview" aria-hidden="true">
+  <button type="button" class="lightbox__btn lightbox__close" aria-label="Close">✕</button>
+  <button type="button" class="lightbox__btn" data-lightbox-prev aria-label="Previous screen">←</button>
+  <figure>
+    <img src="" alt="">
+    <figcaption></figcaption>
+  </figure>
+  <button type="button" class="lightbox__btn" data-lightbox-next aria-label="Next screen">→</button>
 </div>
 
 <script src="site-audio.js"></script>
-<script>
-const dot = document.getElementById('cursorDot');
-const ring = document.getElementById('cursorRing');
-let mx = 0, my = 0, rx = 0, ry = 0;
-
-if (dot && ring) {
-  document.addEventListener('mousemove', (e) => {
-    mx = e.clientX;
-    my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top = my + 'px';
-  });
-  const lerp = (a, b, t) => a + (b - a) * t;
-  (function tickCursor() {
-    rx = lerp(rx, mx, 0.12);
-    ry = lerp(ry, my, 0.12);
-    ring.style.left = rx + 'px';
-    ring.style.top = ry + 'px';
-    requestAnimationFrame(tickCursor);
-  })();
-  document.querySelectorAll('a, button, .mock-strip, .mock-zoom, .lightbox__close, .nav-audio-btn').forEach((el) => {
-    el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
-    el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
-  });
-}
-
-(function initLightbox() {
-  const lb = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightboxImg');
-  const closeBtn = document.getElementById('lightboxClose');
-  const backdrop = document.getElementById('lightboxBackdrop');
-  if (!lb || !lbImg) return;
-  function openLb(src, alt) {
-    lbImg.src = src;
-    lbImg.alt = alt || '';
-    lb.hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLb() {
-    lb.hidden = true;
-    lbImg.src = '';
-    lbImg.alt = '';
-    document.body.style.overflow = '';
-  }
-  document.querySelectorAll('.mock-zoom').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const im = btn.querySelector('img');
-      if (im) openLb(im.currentSrc || im.src, im.alt || '');
-    });
-  });
-  closeBtn?.addEventListener('click', closeLb);
-  backdrop?.addEventListener('click', closeLb);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !lb.hidden) closeLb();
-  });
-})();
-
-const nav = document.getElementById('nav');
-if (nav) {
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  });
-}
-
-(function () {
-  const bgCanvas = document.getElementById('bg-canvas');
-  if (!bgCanvas) return;
-  const bgCtx = bgCanvas.getContext('2d');
-
-  function resizeBg() {
-    bgCanvas.width = window.innerWidth;
-    bgCanvas.height = window.innerHeight;
-  }
-  resizeBg();
-  window.addEventListener('resize', resizeBg);
-
-  const particles = [];
-  const NUM_PARTICLES = 280;
-  for (let i = 0; i < NUM_PARTICLES; i++) {
-    particles.push({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      r: Math.random() * 1.5 + 0.3,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      a: Math.random() * 0.45 + 0.08,
-      hue: 8 + Math.random() * 32
-    });
-  }
-
-  const orbs = [
-    { x: 0.12, y: 0.18, r: 360, h: 18, s: 92, l: 46 },
-    { x: 0.82, y: 0.62, r: 320, h: 6, s: 88, l: 36 },
-    { x: 0.54, y: 0.88, r: 300, h: 28, s: 78, l: 44 },
-  ];
-  let orbTime = 0;
-
-  function drawBg() {
-    bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
-    orbTime += 0.003;
-    orbs.forEach((orb, i) => {
-      const ox = (orb.x + Math.sin(orbTime * 0.7 + i * 2.1) * 0.06) * bgCanvas.width;
-      const oy = (orb.y + Math.cos(orbTime * 0.5 + i * 1.7) * 0.05) * bgCanvas.height;
-      const g = bgCtx.createRadialGradient(ox, oy, 0, ox, oy, orb.r);
-      g.addColorStop(0, `hsla(${orb.h},${orb.s}%,${orb.l}%,0.2)`);
-      g.addColorStop(0.5, `hsla(${orb.h},${orb.s}%,${orb.l}%,0.07)`);
-      g.addColorStop(1, `hsla(${orb.h},${orb.s}%,${orb.l}%,0)`);
-      bgCtx.fillStyle = g;
-      bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
-    });
-    particles.forEach(p => {
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < 0) p.x = bgCanvas.width;
-      if (p.x > bgCanvas.width) p.x = 0;
-      if (p.y < 0) p.y = bgCanvas.height;
-      if (p.y > bgCanvas.height) p.y = 0;
-      bgCtx.beginPath();
-      bgCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      bgCtx.fillStyle = `hsla(${p.hue}, 72%, 62%, ${p.a})`;
-      bgCtx.fill();
-    });
-    requestAnimationFrame(drawBg);
-  }
-  drawBg();
-})();
-</script>
-
+<script src="particles.js?v=19"></script>
+<script src="case.js?v=12"></script>
 </body>
 </html>
